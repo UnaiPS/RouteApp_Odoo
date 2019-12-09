@@ -3,15 +3,16 @@
     'name': "routes",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        This module has useful tools to manage and see all the routes' data.""",
 
     'description': """
-        Long description of module's purpose
+        The tools provides different graphs to see in a clearer way data such as
+        how many packages have been sent, the distance a certain worker has 
+        travelled, the time a worker has been on the road...
     """,
 
-    'author': "My Company",
-    'website': "http://www.yourcompany.com",
+    'author': "Jon Calvo, Unai Pérez, Daira Eguzkiza",
+    'website': "https://es.linkedin.com/in/eusko-code-866723198",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/10.0/odoo/addons/base/module/module_data.xml
