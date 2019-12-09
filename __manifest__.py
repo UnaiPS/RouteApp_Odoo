@@ -6,7 +6,7 @@
         This module has useful tools to manage and see all the routes' data.""",
 
     'description': """
-        The tools provides different graphs to see in a clearer way data such as
+        The tools provide different graphs to see in a clearer way data such as
         how many packages have been sent, the distance a certain worker has 
         travelled, the time a worker has been on the road...
     """,
