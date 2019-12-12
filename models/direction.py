@@ -1,14 +1,13 @@
-from odoo import models, fields, api
+from odoo import models, fields
 
 class Direction(models.Model):
     _name = 'routes.direction'
     
-    direction_id = field.Integer()
-    name = field.Char()
-    country = field.Char()
-    state = field.Char()
-    city = field.Char()
-    district = field.Char()
-    street = field.Char()
-    house_number = field.Char()
-    postal_code = field.Char()
+    name = fields.Char()
+    country = fields.Char()
+    state = fields.Char()
+    city = fields.Char()
+    district = fields.Char()
+    street = fields.Char()
+    house_number = fields.Char()
+    postal_code = fields.Char()
