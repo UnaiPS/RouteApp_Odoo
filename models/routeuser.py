@@ -1,6 +1,7 @@
 from odoo import models, fields
 
-class User(models.Model):
-    _inherit ='res.user'
+class Routeuser(models.Model):
+    _name = 'routes.routeuser'
+    _inherit ='res.users'
     admin = fields.Boolean("Admin", default=False)
     
