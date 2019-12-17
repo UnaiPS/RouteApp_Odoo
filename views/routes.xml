@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data><!-- window action --><!-- The following tag is an action definition for a "window action",that is an action opening a view or a set of views -->
+        <record model="ir.actions.act_window" id="route_list_action">
+            <field name="name">Routes</field>
+            <field name="res_model">routes.route</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create the first route</p>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="route_form_view">
+            <field name="name">route.form</field>
+            <field name="model">routes.route</field>
+            <field name="arch" type="xml">
+                <form string="Route Form">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="distance"/>
+                            <field name="time"/>
+                            <field name="completed"/>
+                        </group>
+                        <group>
+                            <field name="worker_id" options="{'create': false, 'create_edit': false}"/>
+                            <field name="author_id" options="{'create': false, 'create_edit': false}"/>
+                        
+                        
+                            <field name="origin_id"/>
+                        </group>
+                            <label for="destination_ids"/>
+                            <field name="destination_ids"/>
+                        
+                            <label for="product_ids"/>
+                            <field name="product_ids"/>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+<!-- top level menu: no parent -->
+        <menuitem id="main_routes_menu" name="RoutesMain"/><!-- A first level in the left side menu is needed before using action= attribute -->
+        <menuitem id="routes_menu" name="Routes" parent="main_routes_menu"/><!-- the following menuitem should appear*after*its parent openacademy_menu and *after* itsaction course_list_action -->
+        <menuitem id="route_menu" name="Route" parent="routes_menu" action="route_list_action"/><!-- Full id location:          action="openacademy.course_list_action"It is not required when it is the same module -->
+    </data>
+</odoo>

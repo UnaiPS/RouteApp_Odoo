@@ -9,7 +9,7 @@ class Route(models.Model):
     product_ids = fields.Many2many('product.product', string="Product/Service", required=True)
     distance = fields.Float()
     time = fields.Float()
-    completed = fields.Boolean("Completed", default=False)
+    completed = fields.Boolean("Completed", default=False, required=True)
 
 
     
