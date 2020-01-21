@@ -1,0 +1,61 @@
+<odoo>
+    <data>
+        <report
+            id="report_stats"
+            model="routes.route"
+            string="Stats Report"
+            name="routes.route_stats_report_view"
+            file="routes.route_stats_report"
+            report_type="qweb-pdf" />
+
+            <template id="route_stats_report_view">
+                <t t-call="report.html_container">
+                    
+                    
+                    <t t-set="count_all" t-value="0" />
+                    <t t-set="count_completed" t-value="0" />
+                    <t t-foreach="docs" t-as="doc">
+                        <t t-set="count_all" t-value="count_all+1" />
+                        <t t-call="report.external_layout">
+                            <div class="page">
+                                
+                                    <t t-if="doc.completed">
+                                    <t t-set="count_completed" t-value="count_completed+1" />
+                                    </t>
+                                <br/>
+                                <h2 t-field="doc.name"/>
+                                <h4> Travelled distance: </h4>
+                                <h5 t-field="doc.distance"/> m
+                                <h4> Total travelled time: </h4>
+                                <h5 t-field="doc.time"/> h
+                                <h3> Origin: </h3>
+                                <h5 t-field="doc.origin_id"/>
+                                <h3> Destinations: </h3>
+                                <t t-foreach="doc.destination_ids" t-as="d">
+                                    <h5 t-field="d.name"></h5>
+                                </t>
+                                <br/>
+                                <!--<h6>Total routes: <t t-esc="count_all"/></h6>-->
+                                <t t-set="completed_percentage" t-value="count_completed * 100 / count_all" />
+                                <div class="o_progress" style="width: 100px;
+						height: 15px;
+						vertical-align: middle;
+						border: 1px solid #FAF5E1;
+						overflow: hidden;
+						background-color:#FAF5E1;">
+							<div t-esc="completed_percentage" t-attf-style="width: {{completed_percentage}}%; background-color: #70B8A6;
+							height: 100%;"> </div>
+                                </div>
+                                
+                                <field name="count_all" widget="gauge" style="width:150px; height: 80px; cursor: pointer;" options="{'max_field': 'count_all'}">  
+                                </field>
+                                
+                            </div>
+                        </t>
+                    </t>
+                </t>
+            </template>
+    </data>
+</odoo>
+
+

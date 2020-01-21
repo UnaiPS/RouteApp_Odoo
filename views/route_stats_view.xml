@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data><!-- Add instructor field to existing view -->
+        <record model="ir.actions.act_window" id="stats_action">
+            <field name="name">Stats</field>
+            <field name="res_model">routes.stats</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">These are the routes' stats</p>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="stats_view">
+            <field name="name">route.form</field>
+            <field name="model">routes.stats</field>
+            <field name="arch" type="xml">
+                <form string="Route Form">
+                    
+                </form>
+            </field>
+        </record>
+        
+        <menuitem id="stats_menu" name="Stats" parent="routes_menu" action="stats_action"/><!-- Full id location:          action="openacademy.course_list_action"It is not required when it is the same module -->
+        
+    </data>
+</odoo>

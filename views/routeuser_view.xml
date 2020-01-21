@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data><!-- Add instructor field to existing view -->
+        <record model="ir.actions.act_window" id="user_list_action">
+            <field name="name">Users</field>
+            <field name="res_model">routes.routeuser</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create the first user</p>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="user_form_view">
+            <field name="name">routeuser.form</field>
+            <field name="model">routes.routeuser</field>
+            <field name="arch" type="xml">
+                <form string="Routeuser Form">
+                    <sheet>
+                        <field name="id" invisible="1"/>
+                        <div class="oe_form_box_info oe_text_center" style="margin-bottom: 10px" attrs="{'invisible': [('id', '&gt;', 0)]}">
+                            You are creating a new user. After saving, the user will receive an invite email containing a link to set its password.
+                        </div>
+                        <field name="image" widget="image" class="oe_avatar" options="{&quot;preview_image&quot;: &quot;image_medium&quot;}"/>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1><field name="name" required="1"/></h1>
+                            <field name="email" invisible="1"/>
+                            <label for="login" class="oe_edit_only" string="Email Address"/>
+                            <h2>
+                                <field name="login" placeholder="email@yourcompany.com"/>
+                            </h2>
+                            <label for="company_id" class="oe_edit_only" groups="base.group_multi_company"/>
+                            <field name="company_id" context="{'user_preference': 0}" groups="base.group_multi_company"/>
+                        </div>
+                        <group>
+                            <label for="groups_id" string="Access Rights" attrs="{'invisible': [('id', '&gt;', 0)]}" groups="base.group_no_one"/>
+                            <div attrs="{'invisible': [('id', '&gt;', 0)]}" groups="base.group_no_one">
+                                <field name="groups_id" readonly="1" widget="many2many_tags" style="display: inline;"/> You will be able to define additional access rights by editing the newly created user under the Settings / Users menu.
+                            </div>
+                            <field name="phone" widget="phone"/>
+                            <field name="mobile" widget="phone"/>
+                            <field name="fax"/>
+                            <field name="admin"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <menuitem id="user_menu" name="User" parent="routes_menu" action="user_list_action"/><!-- Full id location:          action="openacademy.course_list_action"It is not required when it is the same module -->
+        
+    </data>
+</odoo>

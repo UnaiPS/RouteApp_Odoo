@@ -1,16 +1,19 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "routes",
+    'name': "Routes",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        Route's, directions' and delivery users' management.
+        """,
 
     'description': """
-        Long description of module's purpose
+        This module handles the user the options to enter routes with its 
+        respective deliveryman, admin who created it, origin and destinations. 
+        It also gives you the possibility 
+        to add delivery users and to see stats based on the routes travelled.
     """,
 
-    'author': "My Company",
+    'author': "EuskoCode",
     'website': "http://www.yourcompany.com",
 
     # Categories can be used to filter modules in modules listing
@@ -27,8 +30,10 @@
         # 'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
-        'views/routes.xml',
-        'views/user_admin_form_view.xml'
+        'views/route_view.xml',
+        'views/routeuser_view.xml',
+        'views/route_stats_view.xml',
+        'report/route_stats_report.xml'
     ],
     # only loaded in demonstration mode
     'demo': [
