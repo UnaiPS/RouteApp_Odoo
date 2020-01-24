@@ -31,8 +31,8 @@
         'views/views.xml',
         'views/templates.xml',
         'views/route_view.xml',
-        'views/routeuser_view.xml',
-        'views/route_stats_view.xml',
+#        'views/routeuser_view.xml',
+#        'views/route_stats_view.xml',
         'report/route_stats_report.xml'
     ],
     # only loaded in demonstration mode
