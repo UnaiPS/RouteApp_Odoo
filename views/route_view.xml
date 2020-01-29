@@ -23,8 +23,8 @@
                             <field name="completed"/>
                         </group>
                         <group>
-                          <!--   <field name="worker_id" options="{'create': false, 'create_edit': false}"/> domain="[('id', '!=', author_id)]" -->
-                          <!--   <field name="author_id" options="{'create': false, 'create_edit': false}"/>  domain="[('id', '!=', worker_id)]"-->
+                             <field name="worker_id" options="{'create': false, 'create_edit': false}" domain="[('id', '!=', author_id)]"/> <!--domain="[('id', '!=', author_id)]" -->
+                             <field name="author_id" options="{'create': false, 'create_edit': false}" domain="[('id', '!=', worker_id)]"/>  <!--domain="[('id', '!=', worker_id)]"-->
                         
                         
                             <field name="origin_id"/> <!--domain="[('id', '!=', destination_ids)]"--> 
