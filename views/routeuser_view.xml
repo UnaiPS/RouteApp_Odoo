@@ -13,20 +13,21 @@
         </record>
         
         
-        <!--record model="ir.ui.view" id="user_form_view">
-            <field name="name">user_form_view</field>
-            <field name="model">res.users</field>
+        <record model="ir.ui.view" id="base.view_partner_form">
+            <field name="name">res.partner.route.simplified.form</field>
+            <field name="model">routes.routeuser</field>
+            <field name="inherit_id" ref="base.view_partner_simple_form"/>
             <field name="type">form</field>
             <field name="arch" type="xml">
                 <field name="mobile" position="after">
                     <xpath expr="//field[@name='mobile']" position="after">
-                        <field name="mobile"/>
+                        <field name="admin"/>
                     </xpath>       
                 </field>     
             </field>
-        </record-->
+        </record>
         
-        <record model="ir.ui.view" id="user_form_view">
+        <!--record model="ir.ui.view" id="user_form_view">
             <field name="name">routeuser.form</field>
             <field name="model">routes.routeuser</field>
             <field name="arch" type="xml">
@@ -53,6 +54,7 @@
                             <div attrs="{'invisible': [('id', '&gt;', 0)]}" groups="base.group_no_one">
                                 <field name="groups_id" readonly="1" widget="many2many_tags" style="display: inline;"/> You will be able to define additional access rights by editing the newly created user under the Settings / Users menu.
                             </div>
+                            <field name="groups_id"/>
                             <field name="phone" widget="phone"/>
                             <field name="mobile" widget="phone"/>
                             <field name="fax"/>
@@ -61,7 +63,7 @@
                     </sheet>
                 </form>
             </field>
-        </record>
+        </record-->
         
         <menuitem id="user_menu" name="User" parent="routes_menu" action="user_list_action"/><!-- Full id location:          action="openacademy.course_list_action"It is not required when it is the same module -->
         

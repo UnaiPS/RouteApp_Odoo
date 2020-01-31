@@ -11,3 +11,4 @@ class Direction(models.Model):
     street = fields.Char()
     house_number = fields.Char()
     postal_code = fields.Char()
+#    route = fields.One2many('routes.route','origin_id', string='Origin')

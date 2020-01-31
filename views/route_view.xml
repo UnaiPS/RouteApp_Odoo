@@ -21,6 +21,7 @@
                             <field name="distance"/>
                             <field name="time"/>
                             <field name="completed"/>
+                            <field name="speed"/>
                         </group>
                         <group>
                              <field name="worker_id" options="{'create': false, 'create_edit': false}" domain="[('id', '!=', author_id)]"/> <!--domain="[('id', '!=', author_id)]" -->

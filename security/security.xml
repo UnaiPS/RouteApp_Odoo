@@ -1,0 +1,8 @@
+<odoo>
+        <record id="group_routeadmin" model="res.groups">
+            <field name="name">Routes / Admin</field>
+        </record>
+        <record id="group_delivery" model="res.groups">
+            <field name="name">Routes / Delivery</field>
+        </record>
+</odoo>

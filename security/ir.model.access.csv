@@ -1,2 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_routes_routes,routes.routes,model_routes_routes,,1,0,0,0
+access_routes_routes,routes.route,model_routes_route,,1,0,0,0
+access_routes_admin,routes.route,model_routes_route,group_routeadmin,1,1,1,1
+access_routes_delivery,routes.route,model_routes_route,group_delivery,1,0,0,0
